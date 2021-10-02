@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', open-sans;
+}
+
+// @font-face {
+//   font-family: 'myFirstFont';
+//   src: url('DigitalDisplayRegular-ODEO.ttf') format('truetype');
+//   }
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#969393, #4552e2);
+  font-family: 'Bungee Hairline', cursive;
+}
+
+h1 {
+    // font-family: 'myFirstFont', 'Times New Roman', Times, serif;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    // align-items: center;
+    justify-content: center;
+    height: 650px;
+    margin: 5% 0;
+    // max-width: 500px;
+    // width: auto;
+    background-color: orange;
+    border-radius: 28px;
+
+    box-shadow: 8px 10px 5px rgb(95, 95, 95);
+    
+    &__top {
+        height: 30%;
+        width: 95%;
+        background-color: rgb(252, 175, 32);
+        border-radius: 18px;
+    }
+    &__screen {
+        height: 25%;
+        width: 94%;
+        background-color: rgb(39, 27, 5);
+        border: 8px solid rgb(65, 64, 64);
+        border-top: 10px solid rgb(107, 106, 106);
+        border-bottom: 13px solid rgb(90, 89, 89);
+        border-radius: 8px;
+
+        color:chartreuse;
+        font-size: 3.2rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+    &__buttons {
+        height: 45%;
+        width: 94%;
+        background-color: rgb(255, 178, 35);
+        border-radius: 18px;
+        
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 2rem;
+
+        display:flex;
+        justify-content: space-around;
+
+        padding: 1.2rem 0.4rem 2rem 0.5rem;
+
+        &--left {
+            background-color: chartreuse;
+            border: 2px solid black;
+            // padding: 0;
+            width: 26%;
+
+            display: grid;
+            grid-template-areas: 
+                'btn1 btn1'
+                'btn2 btn3'
+                'btn4 btn5'
+                'btn6 btn6'
+            ;
+        }
+        &--centre {
+            background-color: hotpink;
+            border: 2px solid black;
+            width: 38%;
+
+            display: grid;
+            grid-template-areas: 
+                'btn7 btn8 btn9'
+                'btn10 btn11 btn12'
+                'btn13 btn14 btn15'
+                'btn16 btn16 btn17'
+            ;
+        }
+        &--right {
+            background-color: yellow;
+            border: 2px solid black;
+            width: 26%;
+
+            display: grid;
+            grid-template-areas: 
+                'btn18 btn18'
+                'btn19 btn20'
+                'btn19 btn21'
+                'btn22 btn22'
+            ;
+        }
+    }
+}
+
+.button {
+    border: 0.13rem solid rgb(97, 96, 96);
+    background-color: yellow;
+
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 2rem;
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+    &--wide {
+        // width: 7.23rem;
+    }
+
+    &--red {
+        background-color: red;
+        color: white;
+    }
+
+    &--red-text {
+        color: red;
+    }
+}
+
+header {
+    background: #023d6d;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    width: 100%;
+}
+
+.btn1 { grid-area: btn1; }
+.btn2 { grid-area: btn2; }
+.btn3 { grid-area: btn3; }
+.btn4 { grid-area: btn4; }
+.btn5 { grid-area: btn5; }
+.btn6 { grid-area: btn6; }
+.btn7 { grid-area: btn7; }
+.btn8 { grid-area: btn8; }
+.btn9 { grid-area: btn9; }
+.btn10 { grid-area: btn10; }
+.btn11 { grid-area: btn11; }
+.btn12 { grid-area: btn12; }
+.btn13 { grid-area: btn13; }
+.btn14 { grid-area: btn14; }
+.btn15 { grid-area: btn15; }
+.btn16 { grid-area: btn16; }
+.btn17 { grid-area: btn17; }
+.btn18 { grid-area: btn18; }
+.btn19 { grid-area: btn19; }
+.btn20 { grid-area: btn20; }
+.btn21 { grid-area: btn21; }
+.btn22 { grid-area: btn22; }
