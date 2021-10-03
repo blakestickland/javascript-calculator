@@ -19,11 +19,6 @@ body {
   font-family: 'Bungee Hairline', cursive;
 }
 
-h1 {
-    // font-family: 'myFirstFont', 'Times New Roman', Times, serif;
-}
-
-
 .container {
     display: flex;
     justify-content: center;
@@ -91,10 +86,10 @@ h1 {
 
             display: grid;
             grid-template-areas: 
-                'btn1 btn1'
-                'btn2 btn3'
-                'btn4 btn5'
-                'btn6 btn6'
+                'btnMinusEquals btnMinusEquals'
+                'btnPercentage btnPlusEquals'
+                'btnSum btnCE'
+                'btnC btnC'
             ;
         }
         &--centre {
@@ -105,9 +100,9 @@ h1 {
             display: grid;
             grid-template-areas: 
                 'btn7 btn8 btn9'
-                'btn10 btn11 btn12'
-                'btn13 btn14 btn15'
-                'btn16 btn16 btn17'
+                'btn4 btn5 btn6'
+                'btn1 btn2 btn3'
+                'btn0 btn0 btnDot'
             ;
         }
         &--right {
@@ -117,14 +112,16 @@ h1 {
 
             display: grid;
             grid-template-areas: 
-                'btn18 btn18'
-                'btn19 btn20'
-                'btn19 btn21'
-                'btn22 btn22'
+                'btnEquals btnEquals'
+                'btnMinus btnDivide'
+                'btnMinus btnMultiply'
+                'btnAdd btnAdd'
             ;
         }
     }
 }
+
+
 
 .button {
     border: 0.13rem solid rgb(97, 96, 96);
@@ -137,8 +134,8 @@ h1 {
     height: 100%;
     margin: 0;
 
-    &--wide {
-        // width: 7.23rem;
+    &__number {
+        background-color: yellow;
     }
 
     &--red {
@@ -151,6 +148,8 @@ h1 {
     }
 }
 
+
+
 header {
     background: #023d6d;
     color: white;
@@ -160,25 +159,25 @@ header {
     width: 100%;
 }
 
-.btn1 { grid-area: btn1; }
-.btn2 { grid-area: btn2; }
-.btn3 { grid-area: btn3; }
-.btn4 { grid-area: btn4; }
-.btn5 { grid-area: btn5; }
-.btn6 { grid-area: btn6; }
-.btn7 { grid-area: btn7; }
-.btn8 { grid-area: btn8; }
-.btn9 { grid-area: btn9; }
-.btn10 { grid-area: btn10; }
-.btn11 { grid-area: btn11; }
-.btn12 { grid-area: btn12; }
-.btn13 { grid-area: btn13; }
-.btn14 { grid-area: btn14; }
-.btn15 { grid-area: btn15; }
-.btn16 { grid-area: btn16; }
-.btn17 { grid-area: btn17; }
-.btn18 { grid-area: btn18; }
-.btn19 { grid-area: btn19; }
-.btn20 { grid-area: btn20; }
-.btn21 { grid-area: btn21; }
-.btn22 { grid-area: btn22; }
+#btnMinusEquals { grid-area: btnMinusEquals; }
+#btnPercentage { grid-area: btnPercentage; }
+#btnPlusEquals { grid-area: btnPlusEquals; }
+#btnSum { grid-area: btnSum; }
+#btnCE { grid-area: btnCE; }
+#btnC { grid-area: btnC; }
+#btn7 { grid-area: btn7; }
+#btn8 { grid-area: btn8; }
+#btn9 { grid-area: btn9; }
+#btn4 { grid-area: btn4; }
+#btn5 { grid-area: btn5; }
+#btn6 { grid-area: btn6; }
+#btn1 { grid-area: btn1; }
+#btn2 { grid-area: btn2; }
+#btn3 { grid-area: btn3; }
+#btn0 { grid-area: btn0; }
+#btnDot { grid-area: btnDot; }
+#btnEquals { grid-area: btnEquals; }
+#btnMinus { grid-area: btnMinus; }
+#btnDivide { grid-area: btnDivide; }
+#btnMultiply { grid-area: btnMultiply; }
+#btnAdd { grid-area: btnAdd; }

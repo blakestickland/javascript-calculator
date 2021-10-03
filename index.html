@@ -12,7 +12,8 @@
     </style>
     <title>JavaScript Calculator</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <script src="./scripts/app.js"></script>
+    <script src="./scripts/vendor.js" defer></script>
+    <script src="./scripts/app.js" defer></script>
 </head>
 <body>
     <header>
@@ -26,36 +27,36 @@
 
                 </section>
                 <section class="calculator__screen">
-                    <div id="screen">1+3+5</div>
+                    <h1 id="screen">0</h1>
                 </section>
                 <section class="calculator__buttons">
                     <div class="buttons calculator__buttons--left">
-                        <button class="button button--wide button--red-text btn1">-</button>
-                        <button class="button btn2">%</button>
-                        <button class="button button--red-text btn3">&#2195;</button>
-                        <button class="button btn4">&#8721;</button>
-                        <button class="button button--red btn5">CE</button>
-                        <button class="button button--red button--wide btn6">C</button>
+                        <button class="button button--wide button--red-text" id="btnMinusEquals">-=</button>
+                        <button class="button" id="btnPercentage">%</button>
+                        <button class="button button--red-text" id="btnPlusEquals">+=</button>
+                        <button class="button btnSum">&#8721;</button>
+                        <button class="button button--red" id="btnCE">CE</button>
+                        <button class="button button--red" id="btnC">C</button>
                     </div>
                     <div class="buttons calculator__buttons--centre">
-                        <button class="button btn7">7</button>
-                        <button class="button btn8">8</button>
-                        <button class="button btn9">9</button>
-                        <button class="button btn10">4</button>
-                        <button class="button btn11">5</button>
-                        <button class="button btn12">6</button>
-                        <button class="button btn13">1</button>
-                        <button class="button btn14">2</button>
-                        <button class="button btn15">3</button>
-                        <button class="button button--wide btn16">0</button>
-                        <button class="button btn17">.</button>
+                        <button class="button button__number" id="btn7" value="7">7</button>
+                        <button class="button button__number" id="btn8" value="8">8</button>
+                        <button class="button button__number" id="btn9" value="9">9</button>
+                        <button class="button button__number" id="btn4" value="4">4</button>
+                        <button class="button button__number" id="btn5" value="5">5</button>
+                        <button class="button button__number" id="btn6" value="6">6</button>
+                        <button class="button button__number" id="btn1" value="1">1</button>
+                        <button class="button button__number" id="btn2" value="2">2</button>
+                        <button class="button button__number" id="btn3" value="3">3</button>
+                        <button class="button button__number" id="btn0" value="0">0</button>
+                        <button class="button button__number" id="btnDot" value=".">.</button>
                     </div>
                     <div class="buttons calculator__buttons--right">
-                        <button class="button button--wide btn18">=</button>
-                        <button class="button button--tall button--red-text btn19">-=</button>
-                        <button class="button btn20">&#247;</button>
-                        <button class="button btn21">x</button>
-                        <button class="button button--wide btn22">+=</button>
+                        <button class="button button__operator" id="btnEquals">=</button>
+                        <button class="button button__operator button--red-text" id="btnMinus">-</button>
+                        <button class="button button__operator" id="btnDivide">&#247;</button>
+                        <button class="button button__operator" id="btnMultiply">x</button>
+                        <button class="button button__operator" id="btnAdd">+</button>
                     </div>
                 </section>
             </div>
