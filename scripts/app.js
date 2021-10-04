@@ -1,147 +1,94 @@
 "use strict";
-const DEFAULT_DISPLAY = 0;
 
-outputResult(DEFAULT_DISPLAY);
-
-let num1 = "";
-let num2 = "";
-let currentEquation = "";
-let operator = "";
-
-
-function checkNumPosition(button, operator, currentEquation, num1, num2) {
-  if (!operator) {
-    num1 += button.value;
-    currentEquation = num1;
-    outputResult(num1);
-    console.log(`num1 is: ${num1}`);
-  } else if (operator) {
-    currentEquation = num2;
-    outputResult(num1 + operator + num2);
-    console.log(`num2 is: ${num2}`);
-  }
-  console.log(`operator is: ${operator}`);
-}
-
-function checkNumberLength(number) {
-    if (number.length === 6) {
-        alert("Cannot have more than 6 characters in number!");
-        return;
+function numberBtnHandler(clickedNumber) {
+    let currOp = currentOperand.textContent;
+    if (currOp.length > 10) {
+        limitNumberLength(currOp);
+    } else {
+        currentOperand.textContent += clickedNumber;
     }
 }
-const checkDecimalPoint = (currentEquation, clickedNumBtn) => {
-  if (currentEquation.includes(".") && clickedNumBtn === ".") {
-    alert("Cannot have more than one decimal point.");
-    return;
-  }
-};
 
-
-function resetEquation() {
-    num1 = "";
-    num2 = "";
-    currentEquation = "";
-    operator = "";
-    console.log("Clear Everything complete!");
-    outputResult(DEFAULT_DISPLAY);
+function limitNumberLength(numAsString) {
+    alert("This number has been limited to the 10 most significant bits.");
+    currentOperand.textContent = numAsString.slice(0, 10);    
 }
-
-function selectNum(operator, num1, num2, clickedNumber) {
-    if (!operator){
-        num1 += clickedNumber.toString();
-        currentEquation = num1;
-        console.log("num1", num1);
-        console.log("num2", num2);
-    } else if (operator) {
-        num2 += clickedNumber.toString();
-        currentEquation = num1 + operator + num2;
-        console.log("num1", num1);
-        console.log("num2", num2);
-    }
-    console.log("currentEquation", currentEquation);
-    outputResult(currentEquation);
-}
-
 
 numberBtns.forEach(button => 
-    button.addEventListener(
-        "click", () => {
-            let clickedNumber = button.value;
-            if (
-              (clickedNumber === "." && !operator && num1.includes(".")) ||
-              (clickedNumber === "." && operator && num2.includes("."))
-            ) {
-              alert("Clicked on dot more than once");
-            } else if (!operator && num1.length < 10) {
-              num1 += clickedNumber.toString();
-              currentEquation = num1;
-            } else if (operator && num2.length < 10) {
-              num2 += clickedNumber.toString();
-              currentEquation = num1 + operator + num2;
-            } else {
-              alert("Number is too long!");
-            }
-
-            outputResult(currentEquation);
-        }
+    button.addEventListener("click", () => 
+        { numberBtnHandler(button.value) }
     )
 );
-
+    
+function operatorBtnHandler(clickedOperator) {
+    let currOp = currentOperand.textContent;
+    if (clickedOperator === "-" && !currOp) {
+        currentOperand.textContent = "-";
+    } else {
+        previousOperand.textContent = currentOperand.textContent + clickedOperator;
+        currentOperand.textContent = "";
+    }
+}
 operatorBtns.forEach(button => 
-    button.addEventListener(
-        "click", () => {
-            if (!num1 && button.value === "-") {
-                num1 += "-";
-                currentEquation = num1;
-                outputResult(currentEquation);
-                return;
-            } else if (operator) {
-                alert("Cannot have more than one operator!");
-                operator = button.value;
-                return;
-            } else {
-                operator = button.value;
-            }
-
-            currentEquation = num1 + operator;
-            console.log(currentEquation);
-            outputResult(currentEquation);
-        }
+    button.addEventListener("click", () => 
+        { operatorBtnHandler(button.value) }
     )
 );
 
-const evaluate = () => {
-    console.log("= operator");
-    num1 = parseFloat(num1);
-    num2 = parseFloat(num2);
+function equalsBtnHandler() {
+    const prevOpTxt = previousOperand.textContent;
+    const prevOp = prevOpTxt
+        .slice(0, -1);
+    const operator = prevOpTxt
+        .charAt(prevOpTxt.length - 1);
+    const currOp = currentOperand.textContent;
+
+    const num1 = +prevOp;
+    const num2 = +currOp;
     let result;
     switch (operator) {
-        case "+":
-            result = num1 + num2;
-            break;
-        case "-":
-            result = num1 - num2;
-            break;
-        case "*":
-            result = num1 * num2;
-            break;
-        case "/":
-            result = num1 / num2;
-            break;
-    
-        default:
-            break;
-    }
-    if (result.toString().includes(".")) {
-        result = result.toFixed(8);
-    }
-    outputResult(result);
-    num1 = result;
-    num2 = "";
-    operator = "";
-    currentEquation = result;
+      case "+":
+        result = num1 + num2;
+        break;
+      case "-":
+        result = num1 - num2;
+        break;
+      case "*":
+        result = num1 * num2;
+        break;
+      case "/":
+        result = num1 / num2;
+        break;
 
+      default:
+        console.log("Default case in switch");
+        break;
+    }
+    const stringifiedResult = result.toString();
+    if (stringifiedResult.length > 10) {
+        limitNumberLength(stringifiedResult);
+    } else {
+        currentOperand.textContent = stringifiedResult;
+    }
 }
 
-equalsBtn.addEventListener("click", evaluate);
-clearEverythingBtn.addEventListener("click", resetEquation);
+equalsBtn.addEventListener("click", equalsBtnHandler);
+
+function allClear() {
+    currentOperand.textContent = "";
+    previousOperand.textContent = "";
+}
+
+allClearBtn.addEventListener("click", allClear);
+
+function deleteNumber() {
+    const currOp = currentOperand.textContent;
+    if (currOp) {
+        return currentOperand.textContent = currOp.slice(0, -1);
+    } else {
+        return alert("Nothing to delete.");
+    }
+}
+
+deleteBtn.addEventListener("click", deleteNumber);
+
