@@ -21,6 +21,7 @@ const subtractBtn = document.querySelector("#btnMinus");
 const divideBtn = document.querySelector("#btnDivide");
 const multiplyBtn = document.querySelector("#btnMultiply");
 const addBtn = document.querySelector("#btnAdd");
+const decimalPointBtn = document.querySelector("#btnDot");
 
 const clearEverythingBtn = document.querySelector("#btnCE");
 
