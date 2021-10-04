@@ -92,3 +92,12 @@ function deleteNumber() {
 
 deleteBtn.addEventListener("click", deleteNumber);
 
+function hasDecimalPoint(clickedButton) {
+    if (currentOperand.textContent.includes(".")) {
+        return alert("Number already has a decimal point.");
+    } else {
+        currentOperand.textContent += clickedButton;
+    }
+}
+
+decimalPointBtn.addEventListener("click", () => { hasDecimalPoint(decimalPointBtn.value) });
