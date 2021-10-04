@@ -1,3 +1,6 @@
+@use "../styles/partials/sizing";
+
+
 * {
   box-sizing: border-box;
 }
@@ -27,16 +30,21 @@ body {
     height: 100%;
 }
 
+#screen{
+    // width: 100%;
+    // text-align: end;
+}
+
 .calculator {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     // align-items: center;
     justify-content: center;
-    height: 650px;
+    height: sizing.$calculator-height;
     margin: 5% 0;
     // max-width: 500px;
-    // width: auto;
+    width: sizing.$calculator-height * 0.66;
     background-color: orange;
     border-radius: 28px;
 

@@ -16,6 +16,14 @@ const btn7 = document.querySelector("#btn7");
 const btn8 = document.querySelector("#btn8");
 const btn9 = document.querySelector("#btn9");
 
+const equalsBtn = document.querySelector("#btnEquals");
+const subtractBtn = document.querySelector("#btnMinus");
+const divideBtn = document.querySelector("#btnDivide");
+const multiplyBtn = document.querySelector("#btnMultiply");
+const addBtn = document.querySelector("#btnAdd");
+
+const clearEverythingBtn = document.querySelector("#btnCE");
+
 function outputResult(text) {
   calcDisplay.textContent = text;
 }
