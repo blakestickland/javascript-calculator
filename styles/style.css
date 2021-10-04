@@ -47,11 +47,21 @@ body {
   border-top: 10px solid #6b6a6a;
   border-bottom: 13px solid #5a5959;
   border-radius: 8px;
-  color: chartreuse;
-  font-size: 3.2rem;
   display: flex;
-  align-items: center;
-  justify-content: end;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.calculator__screen__previous-operand {
+  color: yellow;
+  font-size: 1.5rem;
+}
+.calculator__screen__current-operand {
+  color: chartreuse;
+  font-size: 3rem;
 }
 .calculator__buttons {
   height: 45%;
@@ -69,7 +79,7 @@ body {
   border: 2px solid black;
   width: 26%;
   display: grid;
-  grid-template-areas: "btnMinusEquals btnMinusEquals" "btnPercentage btnPlusEquals" "btnSum btnCE" "btnC btnC";
+  grid-template-areas: "btnMinusEquals btnMinusEquals" "btnPercentage btnPlusEquals" "btnSum btnAC" "btnDel btnDel";
 }
 .calculator__buttons--centre {
   background-color: hotpink;
@@ -131,12 +141,12 @@ header {
   grid-area: btnSum;
 }
 
-#btnCE {
-  grid-area: btnCE;
+#btnAC {
+  grid-area: btnAC;
 }
 
-#btnC {
-  grid-area: btnC;
+#btnDel {
+  grid-area: btnDel;
 }
 
 #btn7 {
