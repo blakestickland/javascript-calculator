@@ -1,6 +1,8 @@
 "use strict";
 
-const calcDisplay = document.querySelector("#screen");
+const calcDisplay = document.querySelector("#currentOperand");
+const currentOperand = document.querySelector("#currentOperand");
+const previousOperand = document.querySelector("#previousOperand");
 
 const numberBtns = document.querySelectorAll(".button__number");
 const operatorBtns = document.querySelectorAll(".button__operator");
@@ -15,6 +17,16 @@ const btn6 = document.querySelector("#btn6");
 const btn7 = document.querySelector("#btn7");
 const btn8 = document.querySelector("#btn8");
 const btn9 = document.querySelector("#btn9");
+
+const equalsBtn = document.querySelector("#btnEquals");
+const subtractBtn = document.querySelector("#btnMinus");
+const divideBtn = document.querySelector("#btnDivide");
+const multiplyBtn = document.querySelector("#btnMultiply");
+const addBtn = document.querySelector("#btnAdd");
+const decimalPointBtn = document.querySelector("#btnDot");
+
+const allClearBtn = document.querySelector("#btnAC");
+const deleteBtn = document.querySelector("#btnDel");
 
 function outputResult(text) {
   calcDisplay.textContent = text;

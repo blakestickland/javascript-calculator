@@ -1,3 +1,6 @@
+@use "../styles/partials/sizing";
+
+
 * {
   box-sizing: border-box;
 }
@@ -27,16 +30,21 @@ body {
     height: 100%;
 }
 
+#screen{
+    // width: 100%;
+    // text-align: end;
+}
+
 .calculator {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     // align-items: center;
     justify-content: center;
-    height: 650px;
+    height: sizing.$calculator-height;
     margin: 5% 0;
     // max-width: 500px;
-    // width: auto;
+    width: sizing.$calculator-height * 0.66;
     background-color: orange;
     border-radius: 28px;
 
@@ -57,12 +65,24 @@ body {
         border-bottom: 13px solid rgb(90, 89, 89);
         border-radius: 8px;
 
-        color:chartreuse;
-        font-size: 3.2rem;
-
         display: flex;
-        align-items: center;
-        justify-content: end;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-around;
+
+        padding: 10px;
+
+        word-wrap: break-word;
+        word-break: break-all;
+
+        &__previous-operand {
+            color: yellow;
+            font-size: 1.5rem;
+        }
+        &__current-operand {
+            color: chartreuse;
+            font-size: 3rem;
+        }
     }
     &__buttons {
         height: 45%;
@@ -88,8 +108,8 @@ body {
             grid-template-areas: 
                 'btnMinusEquals btnMinusEquals'
                 'btnPercentage btnPlusEquals'
-                'btnSum btnCE'
-                'btnC btnC'
+                'btnSum btnAC'
+                'btnDel btnDel'
             ;
         }
         &--centre {
@@ -163,8 +183,8 @@ header {
 #btnPercentage { grid-area: btnPercentage; }
 #btnPlusEquals { grid-area: btnPlusEquals; }
 #btnSum { grid-area: btnSum; }
-#btnCE { grid-area: btnCE; }
-#btnC { grid-area: btnC; }
+#btnAC { grid-area: btnAC; }
+#btnDel { grid-area: btnDel; }
 #btn7 { grid-area: btn7; }
 #btn8 { grid-area: btn8; }
 #btn9 { grid-area: btn9; }
