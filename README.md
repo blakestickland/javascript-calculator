@@ -1,28 +1,47 @@
 # JavaScript Calculator
 
-Calculator:
-To be submitted by Tuesday 5th of October
--   HTML/SCSS
-1. Create a calculator to be rendered to the html page
-1. it should have number keys from 0 to 9
-1. It should have operator keys (+, -, /, \*)
-It should handle decimals
-1. It should have a display rendering the current calculation in a box at the top
-1. You should choose a picture of a calculator from the Internet and reproduce it in HTML/SCSS
--   JavaScript
-1. Should render the current calculation in a box at the top (calculator display)
-1. It doesn’t need to support orders of operation
-1. It should not use eval() or Function() constructor (edited) 
+  [![MIT License](https://img.shields.io/badge/MIT-License-brightgreen)](https://choosealicense.com/licenses/)
 
-## Calculator Challenge
 
-What do we need?
+![deployed calculator](https://user-images.githubusercontent.com/73763708/141671335-41b8a4db-993a-41ec-9fe3-833f1c54e966.png)
 
-1. A function that takes 3 arguments (2 numbers + 1 operator) and that return the result.
+## Link to the Deployed Portfolio
+[Link to the deployed the Calculator](https://blakestickland.github.io/javascript-calculator/)  
+  
+  <!-- Description of the project -->
+  A calculator created using HTML/SCSS and JavaScript. Visual design is based on a picture of a calculator from the internet and reproduced using HTML/SCSS. Able to perform the operations: addition, subtraction, division and multiplication. Also able to handle decimals. 
+  
+  ## Table of Contents
+  * [MVP](#mvp)
+  * [Inspiration](#inspiration)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Questions](#questions)
 
-2. Have a way to click on number keys and create string (look into parseInt)() or parseFloat() function if you want to work with number type). Check if the number is smaller than 10 digits. 
-3. A way to store the numbers in variables.
-4. A way to store operator clicked in a variable. 
-5. Have result displayed when clicking the `=` symbol. (store the result value in a variable).
-6. Check if the numbers contain a '.'. If it does not, when clicking on the dot, add a dot. It it does, do nothing. (Grab value that is displayed on the screen for the check).
-7. Clear button should reset all variables.
+## MVP
+Required: 
+1. Number keys 0 to 9.
+2. Operator keys (+, -, /, \*).
+3. Clear button to reset all variables. 
+3. Should handle decimals.
+4. Should render the current calculation at the top of the calculator display. 
+5. Should be based on a picture of calculator from the internet.
+
+Exclusions: 
+1. Does not need to support order of operations. 
+2. Should not use eval() or function() constructor. 
+
+## Inspiration
+![digitron-1214-calculator](https://user-images.githubusercontent.com/73763708/141671353-1d17646c-7ee1-4f0e-a3b6-30a476d54e16.jpeg)
+  
+## License
+[MIT License](https://choosealicense.com/licenses/)
+
+## Contributing
+If you would like to contribute, please fork the app, develop, and submit ideas via pull requests. Direct contact any suggestions too via GitHub or email.
+
+## Questions
+Please refer any questions via Github or my email address.
+Github username: [blakestickland](https://github.com/blakestickland)
+
+Email: blakestickland@gmail.com
