@@ -5,7 +5,7 @@
 
 ![deployed calculator](https://user-images.githubusercontent.com/73763708/141671335-41b8a4db-993a-41ec-9fe3-833f1c54e966.png)
 
-## Link to the Deployed Portfolio
+## Link to the Deployed Calculator
 [Link to the deployed the Calculator](https://blakestickland.github.io/javascript-calculator/)  
   
   <!-- Description of the project -->
